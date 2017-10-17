@@ -23,8 +23,11 @@ import android.os.ParcelFileDescriptor;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.FileProvider;
+import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -34,6 +37,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Adapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -56,6 +60,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
@@ -138,7 +143,20 @@ public class PlantDetailsFragment extends Fragment
 
 	@Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
+		if (getArguments() != null)
+		{
+			plantIndex = getArguments().getInt("plant_index", -1);
+			gardenIndex = getArguments().getInt("garden_index", -1);
+
+			if (plantIndex > -1)
+			{
+				plant = PlantManager.getInstance().getPlants().get(plantIndex);
+			}
+		}
 		View view = inflater.inflate(R.layout.plant_details_view, container, false);
+		if(plant == null){
+		view = inflater.inflate(R.layout.add_plant_view, container, false);}
+
 		Views.inject(this, view);
 
 		return view;
@@ -960,4 +978,40 @@ public class PlantDetailsFragment extends Fragment
 			}
 		}
 	}
+	// Add Fragments to Tabs
+//	private void setupViewPager(ViewPager viewPager) {
+//
+//
+//		Adapter adapter = new Adapter(getChildFragmentManager());
+//		adapter.addFragment(new StatisticsFragment(), "Today");
+//		adapter.addFragment(new StatisticsFragment(), "Week");
+//		adapter.addFragment(new StatisticsFragment(), "Month");
+//		viewPager.setAdapter(adapter);
+//
+//
+//
+//	}
+//	static class Adapter extends FragmentPagerAdapter {
+//		private final List<Fragment> mFragmentList = new ArrayList<>();
+//		private final List<String> mFragmentTitleList = new ArrayList<>();
+//
+//		public Adapter(FragmentManager manager) {
+//			super(manager);
+//		}
+//
+//
+//		@Override
+//		public int getCount() {
+//			return mFragmentList.size();
+//		}
+//
+//		public void addFragment(Fragment fragment, String title) {
+//			mFragmentList.add(fragment);
+//			mFragmentTitleList.add(title);
+//		}
+//
+//		@Override
+//		public CharSequence getPageTitle(int position) {
+//			return mFragmentTitleList.get(position);
+//		}
 }

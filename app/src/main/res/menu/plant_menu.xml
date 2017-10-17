@@ -7,12 +7,14 @@
 		android:id="@+id/export"
 		android:title="Export"
 		android:showAsAction="never"
+		android:visible="false"
 	/>
 
 	<item
 		android:id="@+id/duplicate"
 		android:title="Duplicate"
 		android:showAsAction="never"
+		android:visible="false"
 	/>
 
 	<item

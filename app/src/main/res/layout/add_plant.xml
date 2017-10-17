@@ -302,7 +302,7 @@
 			android:layout_marginTop="12dp"
 			android:divider="@drawable/full_divider"
 			android:showDividers="middle"
-			android:visibility="gone"
+			android:visibility="visible"
 			style="@style/PaperCard"
 			android:paddingTop="0dp"
 			android:paddingBottom="0dp"

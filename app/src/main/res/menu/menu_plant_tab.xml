@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="me.anon.grow.fragment.PlantDetailTabActivity">
+    tools:context="me.anon.grow.PlantTabActivity">
     <item
         android:id="@+id/action_settingss"
         android:orderInCategory="100"

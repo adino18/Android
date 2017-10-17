@@ -42,7 +42,7 @@ public class AddPlantActivity extends BaseActivity
 
 		if (getFragmentManager().findFragmentByTag(TAG_FRAGMENT) == null)
 		{
-			getFragmentManager().beginTransaction().replace(R.id.fragment_holder, AddPlantFragment.newInstance(-1, gardenIndex), TAG_FRAGMENT).commit();
+			getFragmentManager().beginTransaction().replace(R.id.fragment_holder, PlantDetailsFragment.newInstance(-1, gardenIndex), TAG_FRAGMENT).commit();
 		}
 	}
 

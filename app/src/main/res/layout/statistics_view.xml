@@ -350,7 +350,7 @@
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="pH"
+				android:text="Water"
 				style="@style/SectionTitle"
 				android:textColor="#ffffffff"
 			/>
@@ -464,7 +464,7 @@
 			<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="PPM"
+				android:text="Temp"
 				style="@style/SectionTitle"
 				android:textColor="#ffffffff"
 			/>

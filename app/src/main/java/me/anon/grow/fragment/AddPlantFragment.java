@@ -60,6 +60,7 @@ import java.util.Locale;
 import java.util.UUID;
 
 import me.anon.controller.provider.PlantWidgetProvider;
+import me.anon.grow.AddPlantActivity;
 import me.anon.grow.AddWateringActivity;
 import me.anon.grow.BuildConfig;
 import me.anon.grow.EditWateringActivity;
@@ -655,7 +656,7 @@ public class AddPlantFragment extends Fragment
 
                 @Override public void onSnackBarAction(Object o)
                 {
-                    Intent plantDetails = new Intent(getActivity(), PlantDetailsActivity.class);
+                    Intent plantDetails = new Intent(getActivity(), AddPlantActivity.class);
                     plantDetails.putExtra("plant_index", PlantManager.getInstance().getPlants().size() - 1);
                     startActivity(plantDetails);
                 }
